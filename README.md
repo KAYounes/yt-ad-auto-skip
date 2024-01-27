@@ -4,11 +4,11 @@
 
 > _Table of Content_
 >
-> [What dose it do](#what-dose-it-do-)
+> [What dose it do](#what-dose-it-do)
 >
-> [How reliable is it](#how-reliable-is-it-)
+> [How reliable is it](#how-reliable-is-it)
 >
-> [How to use it loaclly](#how-to-use-it-loaclly-)
+> [How to use it loaclly](#how-to-use-it-loaclly)
 
 ---
 
