@@ -1,40 +1,50 @@
-# YouTube Auto Ad Skipper Plugin
+# YouTube Auto Ad Skipper Plug-in
 
-**Note -- This was a quick side project**
+**This was a quick side project**
 
 > _Table of Content_
 >
-> [What dose it do](#what-dose-it-do)
+> - [Functionality](#what-dose-it-do)
+> 
+>   - [Reliability](#how-reliable-is-it)
+> 
+> - [Local Use](#how-to-use-it-loaclly)
 >
-> [How reliable is it](#how-reliable-is-it)
->
-> [How to use it loaclly](#how-to-use-it-loaclly)
+> - [Future Work](#future-work)
 
 ---
 
-## What dose it do
+## Functionality
+This plug-in monitors YouTube tabs and automatically reacts to ad playback by:
 
-Well it moniters any YouTube tab, and as soon as an ad plays it dose the following:
+- Muting the ad audio.
 
-1.  mute the ad,
-2.  playback speed is set to 10,
-3.  skips ad after countdown is over, if the ad is skippable.
+- Increasing playback speed to 10x.
 
-After the ad is skipped/has finished everything should return to normal, i.e. playback speed and volume.
+- Skipping the ad after the countdown timer reaches zero.
 
-## How reliable is it
+Once the ad finished or is skipped, the plugin restores the original playback speed and unmutes the audio.
 
-I am sure that it worked with me; however, I am not sure if I have covered all edge cases.
 
-**Note -- the code depends on class names found in the YouTube DOM, so any changes to the class names will break the code.**
+### Reliablity
+Based on my testing, I got consistent results. Ads where detected and couner measures where executed.
 
-## How to use it loaclly
+It works with ads at the beginning of a video, as well as, ads during a video.
 
-I did not uplaod the pluging on chrome web store; however, you can run it locally.
-It is pretty east, you can look up how to create a local pluging, or
+However, on major breaking point is the dependency on YouTube DOM structure (nesting + class names) to function. **Therefore, functionality may be affected by changes in YouTube's DOM structure.**
+
+## Local Use
+
+The plug-in **NOT** curently published on Chrom's Web Store; however, you can run it locally.
+It is pretty easy, either  look up how to add/create a local plug-in, or do itt manually
 
 1. download the file,
-2. go to extensions manager on chrome,
+2. go to the extensions manager on Google Chrome,
 3. enable `developer mode`,
 4. click `load unpacked`,
-5. choose the direcotry you just downloaded.
+5. choose the directory you just downloaded.
+
+## Future Work
+1. Add pop-up for configuration.
+2. Publish on Chrome Web Store.
+3. Improve code and reliability.
