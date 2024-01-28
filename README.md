@@ -44,6 +44,8 @@ It is pretty easy, either  look up how to add/create a local plug-in, or do it m
 4. click `load unpacked`,
 5. choose the directory you just downloaded.
 
+ > Not tested, however, changing the location of the directory after adding it as a plug-in might make the plug-in undetected by Google Chomre.
+
 ## Future Work
 1. Add pop-up for configuration.
 2. Publish on Chrome Web Store.
