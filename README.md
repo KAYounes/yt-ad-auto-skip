@@ -23,20 +23,20 @@ This plug-in monitors YouTube tabs and automatically reacts to ad playback by:
 
 - Skipping the ad after the countdown timer reaches zero.
 
-Once the ad finished or is skipped, the plugin restores the original playback speed and unmutes the audio.
+Once the ad is finished or is skipped, the plugin restores the original playback speed and unmutes the audio.
 
 
-### Reliablity
-Based on my testing, I got consistent results. Ads where detected and couner measures where executed.
+### Reliability
+Based on my testing, I got consistent results. Ads were detected and countermeasures where executed.
 
 It works with ads at the beginning of a video, as well as, ads during a video.
 
-However, on major breaking point is the dependency on YouTube DOM structure (nesting + class names) to function. **Therefore, functionality may be affected by changes in YouTube's DOM structure.**
+However, one major breaking point is the dependency on YouTube DOM structure (nesting + class names) to function. **Therefore, functionality may be affected by changes in YouTube's DOM structure.**
 
 ## Local Use
 
-The plug-in **NOT** curently published on Chrom's Web Store; however, you can run it locally.
-It is pretty easy, either  look up how to add/create a local plug-in, or do itt manually
+The plug-in is **NOT** currently published on Chrom's Web Store; however, you can run it locally.
+It is pretty easy, either  look up how to add/create a local plug-in, or do it manually
 
 1. download the file,
 2. go to the extensions manager on Google Chrome,
