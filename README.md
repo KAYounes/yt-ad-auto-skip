@@ -49,9 +49,11 @@ It is pretty easy, either  look up how to add/create a local plug-in, or do it m
  > Not tested, however, changing the location of the directory after adding it as a plug-in might make the plug-in undetected by Google Chomre.
 
 ## Known Issues & Fixes
-Occasionly the extension will stop working, I am planning on debugging the errors.
+1. Occasionly the extension will stop working, I am planning on debugging the errors soon.
 
-Right now, if the plugin stops working, open the extension manager and you will see a  reload button on the  plug-in's card, press it and also make sure to reload the YouTube tab.
+   * Right now, if the plugin stops working, open the extension manager and you will see a  reload button on the  plug-in's card, press it and also make sure to reload the YouTube tab.
+     
+3. YouTube surveys are currently unhandled and will have to be either answered, or skipped.
 
 ## Future Work
 1. Add pop-up for configuration.
