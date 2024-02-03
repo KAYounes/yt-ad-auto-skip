@@ -5,13 +5,17 @@
   "version": "1.0",
   "action": {
     "default_popup": "index.html",
-    "default_icon": "skip.png"
+    "default_icon": "./assets/skip_icon_5.png"
   },
-  "permissions": ["activeTab", "scripting", "notifications"],
+  "options_ui": {
+    "page": "index.html",
+    "open_in_tab": true
+  },
+  "permissions": ["activeTab", "scripting", "storage"],
   "content_scripts": [
     {
       "matches": ["https://www.youtube.com/*"],
-      "js": ["content.js"]
+      "js": ["./scripts/content.mjs"]
     }
   ]
 }
