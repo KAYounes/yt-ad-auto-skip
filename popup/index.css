@@ -1,0 +1,41 @@
+html {
+  /* font-size: 12px; */
+  width: max-content;
+  font-family: Lexend;
+}
+
+main {
+  background-color: hsl(0deg 0% 94%);
+  border: 1px solid hsl(0deg 0% 76%);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.hide {
+  display: none !important;
+  opacity: 0;
+  visibility: hidden;
+}
+.title {
+  white-space: nowrap;
+  font-size: 1.65rem;
+  margin: 0 1rem;
+}
+
+.buffer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  user-select: none;
+  pointer-events: none;
+}
+
+.form-label {
+  font-weight: 600;
+}
+.input-group-text * {
+  color: hsl(0deg 0% 67%);
+}
