@@ -1,11 +1,12 @@
 import { setStorageSync, getStorageSync } from './../scripts/storage.js';
 
-console.log('-----------');
+// initial options
 let options = {
   adPlaybackSpeed: 10,
   adMute: true,
 };
 
+// look for options in storage
 let storage = await getStorageSync(Object.keys(options)).then(function (result) {
   console.log(1, result, Object.keys(result).length);
   if (Object.keys(result).length === 0) return null;
@@ -13,15 +14,17 @@ let storage = await getStorageSync(Object.keys(options)).then(function (result) 
 });
 
 if (storage === null) {
-  console.log(2);
+  // storage is empty
+  // set initial options in storage
   await setStorageSync({ adPlaybackSpeed: options.adPlaybackSpeed, adMute: options.adMute });
+} else {
+  // update options from storage
+  options = { ...storage };
 }
-options = { ...storage };
 
+// remove buffer and load UI
 document.querySelector('.buffer').classList.add('hide');
 document.querySelector('form').classList.remove('hide');
-
-console.log(3, options);
 document.querySelector('#adPlayBackSpeed').value = options.adPlaybackSpeed;
 document.querySelector('#adMute').checked = options.adMute;
 
