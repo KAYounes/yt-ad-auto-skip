@@ -1,7 +1,8 @@
 html {
   /* font-size: 12px; */
-  width: max-content;
   font-family: Lexend;
+  width: 500px;
+  max-width: 500px;
 }
 
 main {
@@ -22,7 +23,6 @@ main {
 .title {
   white-space: nowrap;
   font-size: 1.65rem;
-  margin: 0 1rem;
 }
 
 .buffer {

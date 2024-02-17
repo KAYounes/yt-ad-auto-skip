@@ -32,6 +32,12 @@ document.querySelector('#adPlayBackSpeed').addEventListener('input', function (e
   let value = event.target.value;
   value = value.replace(/[^0-9]/, '');
   options.adPlaybackSpeed = Number.parseInt(value) ?? 10;
+  event.target.classList.remove('is-invalid');
+  if (invalidPlaybackSpeed()) {
+    options.adPlaybackSpeed = 10;
+    event.target.classList.add('is-invalid');
+  }
+
   event.target.value = value;
   console.log(4, options);
   persistOptions();
@@ -44,4 +50,8 @@ document.querySelector('#adMute').addEventListener('change', function (event) {
 
 function persistOptions() {
   setStorageSync({ adPlaybackSpeed: options.adPlaybackSpeed, adMute: options.adMute });
+}
+
+function invalidPlaybackSpeed() {
+  return options.adPlaybackSpeed < 0 || options.adPlaybackSpeed > 16;
 }
