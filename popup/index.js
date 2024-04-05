@@ -8,7 +8,6 @@ let options = {
 
 // look for options in storage
 let storage = await getStorageSync(Object.keys(options)).then(function (result) {
-  console.log(1, result, Object.keys(result).length);
   if (Object.keys(result).length === 0) return null;
   return result;
 });
@@ -39,7 +38,6 @@ document.querySelector('#adPlayBackSpeed').addEventListener('input', function (e
   }
 
   event.target.value = value;
-  console.log(4, options);
   persistOptions();
 });
 

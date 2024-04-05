@@ -41,7 +41,6 @@ function handleAd() {
   if (adPlaying) {
     video.muted = options.adMute;
     video.playbackRate = options.adPlaybackSpeed > 16 ? 16 : options.adPlaybackSpeed;
-    console.log(`${'='.repeat(20)}\nAd Is Playing Now\n${'='.repeat(20)}\n`);
     if (skip) {
       skip.click();
     }
