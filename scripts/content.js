@@ -1,4 +1,8 @@
-let options = { adPlaybackSpeed: 10, adMute: true };
+let options = {
+  adPlaybackSpeed: 10,
+  adMute: true,
+  adBlur: true,
+};
 let video = document.querySelector('video');
 
 // Listen for configuration changes
@@ -33,16 +37,21 @@ documentObserver.observe(document, { childList: true, subtree: true });
 
 function handleAd() {
   if (video === null) video = document.querySelector('video');
+
   let adPlaying = document.querySelector('.video-ads.ytp-ad-module')?.hasChildNodes() ?? false;
   let adTextNodes = [...document.querySelectorAll('*[id^=ad-text]')];
-  let countDown = adTextNodes.filter((e) => ['1', '2', '3', '4', '5'].includes(e.innerText))[0];
+  // let countDown = adTextNodes.filter((e) => ['1', '2', '3', '4', '5'].includes(e.innerText))[0];
   let skip = adTextNodes.filter((e) => e.innerText === 'Skip')[0];
 
   if (adPlaying) {
+    if (options.adBlur) video.style.filter = 'blur(40px)';
+
     video.muted = options.adMute;
     video.playbackRate = options.adPlaybackSpeed > 16 ? 16 : options.adPlaybackSpeed;
     if (skip) {
       skip.click();
     }
+  } else {
+    video.style.filter = null;
   }
 }

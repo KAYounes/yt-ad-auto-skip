@@ -4,6 +4,7 @@ import { setStorageSync, getStorageSync } from './../scripts/storage.js';
 let options = {
   adPlaybackSpeed: 10,
   adMute: true,
+  adBlur: true,
 };
 
 // look for options in storage
@@ -15,7 +16,10 @@ let storage = await getStorageSync(Object.keys(options)).then(function (result) 
 if (storage === null) {
   // storage is empty
   // set initial options in storage
-  await setStorageSync({ adPlaybackSpeed: options.adPlaybackSpeed, adMute: options.adMute });
+  await setStorageSync(options);
+} else if (optionKeysWasModified(storage, options)) {
+  // an option was manually added/removed from the options object
+  await setStorageSync(options);
 } else {
   // update options from storage
   options = { ...storage };
@@ -26,6 +30,7 @@ document.querySelector('.buffer').classList.add('hide');
 document.querySelector('form').classList.remove('hide');
 document.querySelector('#adPlayBackSpeed').value = options.adPlaybackSpeed;
 document.querySelector('#adMute').checked = options.adMute;
+document.querySelector('#adBlur').checked = options.adBlur;
 
 document.querySelector('#adPlayBackSpeed').addEventListener('input', function (event) {
   let value = event.target.value;
@@ -46,10 +51,27 @@ document.querySelector('#adMute').addEventListener('change', function (event) {
   persistOptions();
 });
 
+document.querySelector('#adBlur').addEventListener('change', function (event) {
+  options.adBlur = event.target.checked;
+  persistOptions();
+});
+
+// // // // // // // //
+
 function persistOptions() {
-  setStorageSync({ adPlaybackSpeed: options.adPlaybackSpeed, adMute: options.adMute });
+  setStorageSync(options);
 }
 
 function invalidPlaybackSpeed() {
   return options.adPlaybackSpeed < 0 || options.adPlaybackSpeed > 16;
+}
+
+function optionKeysWasModified(storage, options) {
+  if (Object.keys(storage).length !== Object.keys(options).length) return true;
+
+  for (let key in options) {
+    if (!(key in storage)) return true;
+  }
+
+  return false;
 }
