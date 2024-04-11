@@ -4,7 +4,7 @@ let options = {
   adBlur: true,
 };
 let video = document.querySelector('video');
-
+let playbackSpeed = 1;
 // Listen for configuration changes
 async function getOptions() {
   options = await chrome.storage.sync.get(Object.keys(options), (r) => (options = r));
@@ -37,6 +37,7 @@ documentObserver.observe(document, { childList: true, subtree: true });
 
 function handleAd() {
   if (video === null) video = document.querySelector('video');
+  playbackSpeed = video.playbackRate;
 
   let adPlaying = document.querySelector('.video-ads.ytp-ad-module')?.hasChildNodes() ?? false;
   let adTextNodes = [...document.querySelectorAll('*[id^=ad-text]')];
@@ -53,5 +54,6 @@ function handleAd() {
     }
   } else {
     video.style.filter = null;
+    video.playbackRate = playbackSpeed;
   }
 }
