@@ -7,6 +7,9 @@
     "default_popup": "index.html",
     "default_icon": "./assets/skip_icon_5.png"
   },
+  "icons": {
+    "512": "./assets/skip_icon_5.png"
+  },
   "options_ui": {
     "page": "index.html",
     "open_in_tab": true
