@@ -4,6 +4,7 @@ let options = {
   adBlur: true,
 };
 let video = document.querySelector('video');
+video.style.filter = 'blur(40px)';
 let playbackSpeed = 1;
 // Listen for configuration changes
 async function getOptions() {
