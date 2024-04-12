@@ -1,8 +1,13 @@
 html {
   /* font-size: 12px; */
   font-family: Lexend;
-  width: 500px;
-  max-width: 500px;
+  /* width: 500px; */
+  /* max-width: 500px; */
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
@@ -10,10 +15,11 @@ main {
   border: 1px solid hsl(0deg 0% 76%);
   border-radius: 10px;
   padding: 1rem;
-  margin: 1em;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: max(50vw, 500px);
 }
 .hide {
   display: none !important;
