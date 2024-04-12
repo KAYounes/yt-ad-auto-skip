@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Auto Skip",
-  "description": "Auto Skips you know what.",
+  "description": "Auto matically skips skippable YouTube Ads, and speeds through unskippable ads. Also mutes and blurs ads.",
   "version": "1.0",
   "action": {
     "default_popup": "index.html",
