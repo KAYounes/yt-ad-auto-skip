@@ -3,8 +3,16 @@ let options = {
   adMute: true,
   adBlur: true,
 };
-let video = document.querySelector('video');
-video.style.filter = 'blur(40px)';
+
+let video = null;
+let fail_safe = 0;
+
+while (video === null && fail_safe < 10 ** 5) {
+  video = document.querySelector('video');
+  video.style.filter = 'blur(40px)';
+  fail_safe = fail_safe + 1;
+}
+
 let playbackSpeed = 1;
 // Listen for configuration changes
 async function getOptions() {
