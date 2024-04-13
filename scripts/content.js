@@ -1,14 +1,10 @@
-let options = {
-  adPlaybackSpeed: 10,
-  adMute: true,
-  adBlur: true,
-};
+// from globals/settings.js
+let options = JSON.parse(JSON.stringify(GLOBALS.settings));
 let video;
 let fail_safe = 0;
 let playbackSpeed = 1;
 let logStack = [];
 let ALLOW_LOGS = false;
-
 while (!(video instanceof HTMLElement) && fail_safe < 10 ** 5) {
   video = document.querySelector('video');
   fail_safe = fail_safe + 1;

@@ -1,11 +1,6 @@
 import { setStorageSync, getStorageSync } from './../scripts/storage.js';
-
 // initial options
-let options = {
-  adPlaybackSpeed: 10,
-  adMute: true,
-  adBlur: true,
-};
+let options = JSON.parse(JSON.stringify(GLOBALS.settings));
 
 // look for options in storage
 let storage = await getStorageSync(Object.keys(options)).then(function (result) {

@@ -18,7 +18,13 @@
   "content_scripts": [
     {
       "matches": ["https://www.youtube.com/*"],
-      "js": ["./scripts/content.js"]
+      "js": ["globals/globals.js", "./scripts/content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["globals/globals.js"],
+      "matches": ["https://www.youtube.com/*"]
     }
   ]
 }
