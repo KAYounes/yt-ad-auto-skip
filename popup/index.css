@@ -26,6 +26,7 @@ main {
   opacity: 0;
   visibility: hidden;
 }
+
 .title {
   white-space: nowrap;
   font-size: 1.65rem;
@@ -44,4 +45,30 @@ main {
 }
 .input-group-text * {
   color: hsl(0deg 0% 67%);
+}
+
+.updates {
+  align-items: center;
+  background-color: hsl(51 100% 88% / 1);
+  border-radius: 0.3em;
+  border: 1px solid hsl(51 69% 40% / 1);
+  color: hsl(51 81% 33% / 1);
+  display: flex;
+  /* gap: 1rem; */
+  justify-content: space-between;
+  margin-inline: auto;
+  padding: 0;
+  width: fit-content;
+}
+
+.message {
+  padding-inline: 0.5em;
+}
+
+.version {
+  /* border-radius: 100em; */
+  /* display: inline-flex; */
+  background-color: hsl(51 81% 33% / 1);
+  color: hsl(51 100% 88% / 1);
+  padding: 0.3em 1em;
 }
