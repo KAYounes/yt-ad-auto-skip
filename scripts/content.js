@@ -113,8 +113,3 @@ function log(flush) {
   if (ALLOW_LOGS === true) logStack.forEach((l) => console.log(l));
   if (flush === true) logStack = [];
 }
-
-function _print(obj) {
-  if (obj instanceof Object) return console.table(obj);
-  return console.log(obj);
-}
