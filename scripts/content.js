@@ -1,3 +1,6 @@
+console.log('========================================');
+console.log('YOUTUBE AUTO SKIP ACTIVE');
+console.log('========================================');
 // from globals/settings.js
 let options = JSON.parse(JSON.stringify(GLOBALS.settings));
 let video;
@@ -5,13 +8,14 @@ let fail_safe = 0;
 let playbackSpeed = 1;
 let logStack = [];
 let ALLOW_LOGS = false;
+
 while (!(video instanceof HTMLElement) && fail_safe < 10 ** 5) {
   video = document.querySelector('video');
   fail_safe = fail_safe + 1;
 }
 
 if (!(video instanceof HTMLElement)) {
-  throw Error('Cannot find video element');
+  throw new Error('YT-AUTO_SKIP - Cannot find video element');
 }
 
 video.style.filter = 'blur(40px)';

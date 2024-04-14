@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Auto Skip",
   "description": "Auto matically skips skippable YouTube Ads, and speeds through unskippable ads. Also mutes and blurs ads.",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "action": {
     "default_popup": "index.html",
     "default_icon": "./assets/skip_icon_5.png"
@@ -17,7 +17,7 @@
   "permissions": ["activeTab", "scripting", "storage"],
   "content_scripts": [
     {
-      "matches": ["https://www.youtube.com/*"],
+      "matches": ["https://www.youtube.com/watch*"],
       "js": ["globals/globals.js", "./scripts/content.js"]
     }
   ]
