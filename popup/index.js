@@ -34,6 +34,8 @@ async function checkForUpdates() {
     const repoVersion = extractVersion(repoRelease.tag_name);
 
     if (manafistVersion === '' || repoVersion === '') return;
+    const currentVersionDiv = document.querySelector('.current_version');
+    currentVersionDiv.textContent = `v${manafistVersion}`;
 
     const updateFound = isUpdateFound(repoVersion, manafistVersion);
     console.log(updateFound);
@@ -43,6 +45,7 @@ async function checkForUpdates() {
     const updatesDiv = document.querySelector('.updates');
     const messageSpan = document.querySelector('.updates > .message');
     const versionSpan = document.querySelector('.updates > .version');
+
     updatesDiv.classList.remove('hide');
     messageSpan.textContent = `A new ${updateFound.toUpperCase()} update is found`;
     versionSpan.textContent = `v${repoVersion}`;
@@ -143,6 +146,7 @@ function extractVersion(version) {
 
   if (!/^\d+\.\d+\.\d+$/.test(rawVersion)) {
     console.log(`Invalid version format: ${rawVersion}`);
+    // throw new Error(console.log(`Invalid version format: ${rawVersion}`))
     return '';
   }
 
